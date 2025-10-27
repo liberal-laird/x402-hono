@@ -1,7 +1,8 @@
 {
   "name": "x402-hono",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts"
   },
   "dependencies": {
     "@coinbase/x402": "^0.6.6",
