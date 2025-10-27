@@ -10,7 +10,6 @@
     "@hono/node-server": "^1.19.5",
     "dotenv": "^17.2.3",
     "hono": "^4.10.3",
-    "@types/bun": "latest",
     "x402-hono": "^0.6.5"
   },
   "devDependencies": {
