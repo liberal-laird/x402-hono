@@ -44,6 +44,12 @@ app.get("/weather", c => {
   });
 });
 
+app.get("/", c => {
+  return c.json({
+    message: "Hello World",
+  });
+});
+
 serve({
   fetch: app.fetch,
   port: 4021,
