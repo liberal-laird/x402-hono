@@ -22,7 +22,7 @@ app.use(
   paymentMiddleware(
     payToAddress,
     {
-      "GET /weather": {
+      "GET /api/v1/mint": {
         // USDC amount in dollars
         price: "$0.001",
         network: "base",
@@ -35,20 +35,14 @@ app.use(
   ),
 );
 
-app.get("/weather", (req, res) => {
+app.get("/api/v1/mint", (req, res) => {
   
   // 上面字段取决于中间件实际插入了什么
     res.json({
     success: true,
-    buyerWallet:   "unknown",
+    message: "wait some time will send to you ERC20 coin",
     
   });
-});
-
-app.post("/x402/webhook", (req, res) => {
-  const buyer = req.body.data?.buyer_wallet_address;
-  console.log("👛 Buyer wallet:", buyer);
-  res.json({ ok: true });
 });
 
 
