@@ -36,13 +36,22 @@ app.use(
 );
 
 app.get("/weather", (req, res) => {
-  res.send({
-    report: {
-      weather: "sunny",
-      temperature: 70,
-    },
+  
+  // 上面字段取决于中间件实际插入了什么
+    res.json({
+    success: true,
+    buyerWallet:   "unknown",
+    
   });
 });
+
+app.post("/x402/webhook", (req, res) => {
+  const buyer = req.body.data?.buyer_wallet_address;
+  console.log("👛 Buyer wallet:", buyer);
+  res.json({ ok: true });
+});
+
+
 
 app.listen(4021, () => {
   console.log(`Server listening at http://localhost:4021`);
